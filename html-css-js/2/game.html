@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Color guessing game</title>
+</head>
+
+<body>
+    <script type="text/javascript">
+        const colors = [
+            'blue',
+            'cyan',
+            'gold',
+            'gray',
+            'green',
+            'magenta',
+            'orange',
+            'red',
+            'white',
+            'yellow',
+            'black',
+            'purple'
+        ];
+
+        const selectRandomFrom = function(arr = []) {
+          if (arr.length == 0) return ''
+          const random = Math.floor(Math.random() * (arr.length - 1));
+          return arr[random]
+        };
+
+        const color = selectRandomFrom(colors);
+
+        alert(`The color I am thinking of is ${color}`);
+
+        const question = function(tries = 0) {
+          return 'I am thinking of one of these colors:\n\n' +
+          colors.join(', ') + '\n\n' +
+          'What color am I thinking of?'
+        }
+        while (prompt(question()) !== color) {
+          console.log('asking')
+        }
+    </script>
+</body>
+
+</html>
