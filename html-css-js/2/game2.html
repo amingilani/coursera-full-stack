@@ -65,8 +65,8 @@ https://github.com/amingilani/coursera-full-stack
 
         let guess = prompt(question());
         let guessCount = 1
-        while ( guess !== color) {
-          if (!colors.includes(guess)) {
+        while ( guess.toLowerCase() !== color) {
+          if (!colors.includes(guess.toLowerCase())) {
             alert(huh);
           } else {
             if (guess < color) {

@@ -44,7 +44,7 @@ https://github.com/amingilani/coursera-full-stack
           colors.join(', ') + '\n\n' +
           'What color am I thinking of?'
         }
-        while (prompt(question()) !== color) {
+        while (prompt(question()).toLowerCase() !== color) {
           console.log('asking')
         }
     </script>
