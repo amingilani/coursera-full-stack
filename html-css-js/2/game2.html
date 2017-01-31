@@ -21,7 +21,7 @@
             'yellow',
             'black',
             'purple'
-        ];
+        ].sort();
 
         const selectRandomFrom = function(arr = []) {
           if (arr.length == 0) return ''
@@ -53,16 +53,16 @@
         const answer = function(guessCount) {
           return 'Congratulations! You have guessed the color!\n\n' +
           'It took you ' + guessCount + ' gueses to finish the game!\n\n' +
-          'You can see the color in the background.'
+          'You will see the color in the background after you hit "OK".'
         }
 
         let guess = prompt(question());
         let guessCount = 1
         while ( guess !== color) {
-          if (!colors.includes('guess')) {
+          if (!colors.includes(guess)) {
             alert(huh);
           } else {
-            if (guess > color) {
+            if (guess < color) {
               alert(youAreHigher);
             } else {
               alert(youAreLower);
@@ -71,6 +71,8 @@
           guessCount += 1
           guess = prompt(question());
         }
+        let myBody=document.getElementsByTagName("body")[0];
+        myBody.style.background=guess;
         alert(answer(guessCount));
     </script>
 </body>
