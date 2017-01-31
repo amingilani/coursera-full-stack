@@ -8,6 +8,7 @@
 
 <body>
     <script type="text/javascript">
+    const playGame = () => {
         const colors = [
             'blue',
             'cyan',
@@ -74,6 +75,11 @@
         let myBody=document.getElementsByTagName("body")[0];
         myBody.style.background=guess;
         alert(answer(guessCount));
+        }
+
+        window.onload = () => {
+          playGame();
+        }
     </script>
 </body>
 
